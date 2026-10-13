@@ -24,3 +24,13 @@ This brief outlines an integrated IT scenario designed to enhance **Oman's Telec
 
 ### 6. Cybersecurity
 * **Role:** Zero-trust architecture, end-to-end encryption (TLS 1.3), and strict access control mechanisms to safeguard critical national telecom infrastructure from cyber threats and unauthorized access.
+
+
+## Domain References & Sources
+
+1. **Networking:** Cisco Systems, *5G and Next-Generation Enterprise Network Architecture*, [cisco.com](https://www.cisco.com)
+2. **Artificial Intelligence:** IEEE Xplore, *Computer Vision Applications in Infrastructure Inspection*, [ieeexplore.ieee.org](https://ieeexplore.ieee.org)
+3. **Mobile Apps:** Google Developers, *Modern Mobile Application Development Best Practices*, [developer.android.com](https://developer.android.com)
+4. **Software:** Martin Fowler, *Microservices Architectural Guide*, [martinfowler.com](https://martinfowler.com/articles/microservices.html)
+5. **Data & Analytics:** AWS Data Architecture & Big Data Analytics Solutions, [aws.amazon.com/big-data/](https://aws.amazon.com/big-data/)
+6. **Cybersecurity:** National Institute of Standards and Technology (NIST), *Cybersecurity Framework (CSF 2.0)*, [nist.gov](https://www.nist.gov/cyberframework)
