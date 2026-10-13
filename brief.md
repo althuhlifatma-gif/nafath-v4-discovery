@@ -1,36 +1,45 @@
 # Nafath Discovery Mission (NAFATH-V4) - Executive Brief
 
-## Scenario Overview: AI-Powered Telecom Infrastructure & Tower Inspection Platform in Oman
-This brief outlines an integrated IT scenario designed to enhance **Oman's Telecommunications Sector**. The platform automates tower inspection, network monitoring, and field service management across Oman's governorates by seamlessly connecting six core IT domains.
+Version: NAFATH-V4
+Track: Networking
 
----
+## Overview
+Securing the software supply chain requires a defense-in-depth approach spanning software design, artificial intelligence models, mobile interfaces, core network routing, cybersecurity response mechanisms, and data governance. A national service provider must ensure that components across all six IT domains remain protected from unauthorized tampering, credential exposure, and malicious routing interferences. By integrating zero-trust architecture, standardized verification protocols, cryptographic route validation, and comprehensive Software Bills of Materials (SBOMs), organizations can establish a resilient digital infrastructure capable of mitigating complex modern cyber threats across every stage of service deployment.
 
-## Integration of the Six IT Domains
+## Software
+According to the Twelve-Factor App methodology, configuration and secrets must be stored in environment variables rather than hardcoded into the application codebase. Hardcoding credentials risks leaking sensitive keys through version control systems like GitHub. Environment variables provide a strict separation between code and configuration, allowing smooth deployments across development, staging, and production environments without recompiling source code or modifying codebase files.
 
-### 1. Networking
-* **Role:** High-speed 5G network connectivity and IoT protocols enabling real-time data transmission between remote telecom towers, edge computing gateways, and central operations.
+Resource: The Twelve-Factor App: Config - https://12factor.net/config
 
-### 2. Artificial Intelligence
-* **Role:** Computer vision and deep learning models analyze drone-captured high-resolution images of telecom towers to automatically detect structural defects, hardware wear, or signal alignment issues.
+## AI
+Adversarial attacks on machine learning systems are broadly categorized into data poisoning and evasion attacks. Poisoning occurs during the training phase, where malicious data is injected to manipulate model behavior. Evasion attacks occur during the inference phase, where attackers craft adversarial inputs to trick a trained model into false predictions without altering training parameters.
 
-### 3. Mobile Applications
-* **Role:** A cross-platform mobile application for field engineers in Oman to receive automated task dispatches, view tower diagnostics, navigate to sites via GPS, and submit inspection reports.
+Resource: NIST SP 800-218: Secure Software Development Framework - https://csrc.nist.gov/publications/detail/sp/800-218/final
 
-### 4. Software Engineering
-* **Role:** A microservices-based cloud platform and web dashboard providing telecom operators with centralized fleet management, automated maintenance scheduling, and live network status views.
+## Mobile
+The OWASP Mobile Application Security Verification Standard (MASVS) is a framework that defines security requirements for mobile applications. It establishes standardized security levels (MASVS-L1 and MASVS-L2) alongside reverse-engineering resiliency requirements (MASVS-R). Developers use MASVS as a baseline to conduct threat modeling, verify secure storage, validate network communications, and prevent client-side vulnerabilities.
 
-### 5. Data & Analytics
-* **Role:** Big data pipelines aggregate historical network traffic, weather conditions, and tower diagnostic data to perform predictive analytics and prevent service outages.
+Resource: OWASP Mobile Application Security Verification Standard - https://mas.owasp.org/MASVS/
 
-### 6. Cybersecurity
-* **Role:** Zero-trust architecture, end-to-end encryption (TLS 1.3), and strict access control mechanisms to safeguard critical national telecom infrastructure from cyber threats and unauthorized access.
+## Networking
+BGP route hijacking occurs when a malicious Autonomous System advertises unauthorized IP prefixes, causing internet routers to misroute traffic to malicious destinations. Resource Public Key Infrastructure (RPKI) uses Route Origin Authorizations (ROAs) to cryptographically verify if an AS is authorized to announce specific prefixes. However, RPKI does not protect against path manipulation within valid AS routes.
+
+Resource: RFC 6480: An Infrastructure to Support Secure Internet Routing - https://www.rfc-editor.org/rfc/rfc6480
+
+## Cybersecurity
+The Log4Shell vulnerability (CVE-2021-44228) in Apache Log4j allowed unauthenticated Remote Code Execution (RCE) via arbitrary JNDI lookups. Rated 10.0 on the CVSS scale due to its widespread usage and trivial exploitation, it was mitigated by disabling JNDI lookups and updating Log4j to version 2.17.0 or higher.
+
+Resource: CISA Alert: Vulnerability in Apache Log4j - https://www.cisa.gov/uscert/ncas/alerts/aa21-351a
+
+## Data
+A Software Bill of Materials (SBOM) is a formal, nested inventory detailing software components and supply chain relationships. Minimum data fields required include Supplier Name, Component Name, Version of Component, Other Unique Identifiers, Dependency Relationship, Author of SBOM Data, and Timestamp.
+
+Resource: CISA Software Bill of Materials (SBOM) - https://www.cisa.gov/sbom
+
+## Misconception in My Track
+A common misconception in networking is that enabling RPKI with BGP Origin Validation completely solves BGP hijacking. While RPKI cryptographically verifies whether an Autonomous System is authorized to originate a specific prefix, it does not validate the path traversed between Autonomous Systems. Attackers can still execute path-spoofing attacks by appending authorized AS numbers to malicious BGP updates. Section 3 of RFC 6480 confirms that RPKI ROAs only validate origin AS authorization and do not guarantee path integrity.
+## Open Question
+How will future Autonomous System Provider Authorization (ASPA) mechanisms integrate into existing edge router hardware without introducing severe processing latencies during dynamic BGP route convergence?
 
 
-## Domain References & Sources
 
-1. **Networking:** Cisco Systems, *5G and Next-Generation Enterprise Network Architecture*, [cisco.com](https://www.cisco.com)
-2. **Artificial Intelligence:** IEEE Xplore, *Computer Vision Applications in Infrastructure Inspection*, [ieeexplore.ieee.org](https://ieeexplore.ieee.org)
-3. **Mobile Apps:** Google Developers, *Modern Mobile Application Development Best Practices*, [developer.android.com](https://developer.android.com)
-4. **Software:** Martin Fowler, *Microservices Architectural Guide*, [martinfowler.com](https://martinfowler.com/articles/microservices.html)
-5. **Data & Analytics:** AWS Data Architecture & Big Data Analytics Solutions, [aws.amazon.com/big-data/](https://aws.amazon.com/big-data/)
-6. **Cybersecurity:** National Institute of Standards and Technology (NIST), *Cybersecurity Framework (CSF 2.0)*, [nist.gov](https://www.nist.gov/cyberframework)
